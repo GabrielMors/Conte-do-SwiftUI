@@ -8,17 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		C445285E2AAA429F006F46CC /* NavigationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445285D2AAA429F006F46CC /* NavigationApp.swift */; };
-		C44528602AAA429F006F46CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445285F2AAA429F006F46CC /* ContentView.swift */; };
+		C44528602AAA429F006F46CC /* TabViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445285F2AAA429F006F46CC /* TabViewContent.swift */; };
 		C44528622AAA42A1006F46CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44528612AAA42A1006F46CC /* Assets.xcassets */; };
 		C44528652AAA42A2006F46CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44528642AAA42A2006F46CC /* Preview Assets.xcassets */; };
+		C445286C2AAA4731006F46CC /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445286B2AAA4731006F46CC /* Sheet.swift */; };
+		C445286E2AAA490B006F46CC /* NavigationViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445286D2AAA490B006F46CC /* NavigationViewContent.swift */; };
+		C44528702AAA4A0F006F46CC /* NavigationLinkContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445286F2AAA4A0F006F46CC /* NavigationLinkContent.swift */; };
+		C44528722AAA4A84006F46CC /* NavigationStackContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44528712AAA4A84006F46CC /* NavigationStackContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C445285A2AAA429F006F46CC /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C445285D2AAA429F006F46CC /* NavigationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationApp.swift; sourceTree = "<group>"; };
-		C445285F2AAA429F006F46CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C445285F2AAA429F006F46CC /* TabViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewContent.swift; sourceTree = "<group>"; };
 		C44528612AAA42A1006F46CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C44528642AAA42A2006F46CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C445286B2AAA4731006F46CC /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
+		C445286D2AAA490B006F46CC /* NavigationViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewContent.swift; sourceTree = "<group>"; };
+		C445286F2AAA4A0F006F46CC /* NavigationLinkContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkContent.swift; sourceTree = "<group>"; };
+		C44528712AAA4A84006F46CC /* NavigationStackContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +60,11 @@
 			isa = PBXGroup;
 			children = (
 				C445285D2AAA429F006F46CC /* NavigationApp.swift */,
-				C445285F2AAA429F006F46CC /* ContentView.swift */,
+				C445285F2AAA429F006F46CC /* TabViewContent.swift */,
+				C445286B2AAA4731006F46CC /* Sheet.swift */,
+				C445286D2AAA490B006F46CC /* NavigationViewContent.swift */,
+				C445286F2AAA4A0F006F46CC /* NavigationLinkContent.swift */,
+				C44528712AAA4A84006F46CC /* NavigationStackContent.swift */,
 				C44528612AAA42A1006F46CC /* Assets.xcassets */,
 				C44528632AAA42A2006F46CC /* Preview Content */,
 			);
@@ -137,7 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C44528602AAA429F006F46CC /* ContentView.swift in Sources */,
+				C44528722AAA4A84006F46CC /* NavigationStackContent.swift in Sources */,
+				C44528702AAA4A0F006F46CC /* NavigationLinkContent.swift in Sources */,
+				C445286E2AAA490B006F46CC /* NavigationViewContent.swift in Sources */,
+				C445286C2AAA4731006F46CC /* Sheet.swift in Sources */,
+				C44528602AAA429F006F46CC /* TabViewContent.swift in Sources */,
 				C445285E2AAA429F006F46CC /* NavigationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

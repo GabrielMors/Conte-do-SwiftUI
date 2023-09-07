@@ -5,9 +5,13 @@
 //  Created by Gabriel Mors  on 07/09/23.
 //
 
+
+//A TabView permite criar uma interface de telas com várias telas, cada uma contendo seu próprio conteúdo.
+
+
 import SwiftUI
 
-struct ContentView: View {
+struct TabViewContent: View {
     var body: some View {
         TabView {
             Text("Conteúdo da primeira tela")
@@ -26,6 +30,6 @@ struct ContentView: View {
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView()
+            TabViewContent()
         }
     }
