@@ -18,6 +18,10 @@ struct ContentView: View {
     var body: some View {
 //   O método body é onde você define a estrutura da view. Este método é chamado sempre que os dados relacionados à view mudam e a interface do usuário precisa ser atualizada.
         
+        
+//-------------- onAppear e onDisappear --------------
+        
+        
         Text("Hello aluno")
         .onAppear {
             // Código a ser executado quando a view aparece
