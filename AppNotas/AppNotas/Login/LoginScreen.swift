@@ -24,9 +24,10 @@ struct LoginScreen: View {
                     .padding(.top, 10)
                 
                 TextField("E-mail", text: $email)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textFieldStyle(PlainTextFieldStyle())
                     .foregroundColor(.white)
                     .frame(height: 40)
+                    .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 0))
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(pinkColor, lineWidth: 2)
@@ -35,9 +36,10 @@ struct LoginScreen: View {
                     .padding(.bottom, 20)
                 
                 SecureField("Password", text: $password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textFieldStyle(PlainTextFieldStyle())
                     .foregroundColor(.white)
                     .frame(height: 40)
+                    .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 0))
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(pinkColor, lineWidth: 2)
@@ -46,7 +48,7 @@ struct LoginScreen: View {
                 
                 Spacer()
                 Button(action: {
-                    // Coloque a lógica de login aqui
+                    
                 }) {
                     Text("Login")
                         .foregroundColor(.white)
