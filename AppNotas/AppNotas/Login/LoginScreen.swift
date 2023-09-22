@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LoginScreen: View {
     @State private var email = ""
     @State private var password = ""
     
@@ -26,43 +26,55 @@ struct ContentView: View {
                 TextField("E-mail", text: $email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .foregroundColor(.white)
+                    .frame(height: 40)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(pinkColor, lineWidth: 2)
+                    )
                     .padding(.top, 70)
+                    .padding(.bottom, 20)
                 
                 SecureField("Password", text: $password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .foregroundColor(.white)
+                    .frame(height: 40)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(pinkColor, lineWidth: 2)
+                    )
                     .padding(.bottom, 100)
+                
                 Spacer()
                 Button(action: {
                     // Coloque a lógica de login aqui
                 }) {
-                    Text("Log in")
+                    Text("Login")
                         .foregroundColor(.white)
                         .font(.system(size: 17, weight: .bold))
                         .frame(width: 130, height: 40)
                         .background(pinkColor)
                         .cornerRadius(8)
                 }
-//                Spacer()
+                Spacer()
                 Button(action: {
-                    // Coloque a lógica para "Exib" aqui
+                    
                 }) {
-                    Text("Exib")
+                    Text("Don't have an account? Register")
                         .foregroundColor(.white)
                         .font(.system(size: 17, weight: .bold))
-                        .frame(width: 130, height: 40)
+                        .frame(height: 40)
                 }
                 
-                Spacer()
             }
             .padding(.horizontal, 20)
+            .padding(.bottom, 50)
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LoginScreen()
     }
 }
 
