@@ -25,7 +25,8 @@ struct LoginScreen: View {
                 
                 TextField("E-mail", text: $email)
                     .textFieldStyle(PlainTextFieldStyle())
-                    .foregroundColor(.white)
+                    .foregroundColor(.white) // Texto
+                    .accentColor(.white) // Cursor do texto
                     .frame(height: 40)
                     .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 0))
                     .overlay(
@@ -38,6 +39,7 @@ struct LoginScreen: View {
                 SecureField("Password", text: $password)
                     .textFieldStyle(PlainTextFieldStyle())
                     .foregroundColor(.white)
+                    .accentColor(.white)
                     .frame(height: 40)
                     .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 0))
                     .overlay(
