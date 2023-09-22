@@ -8,58 +8,54 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var textField = ""
-    @State var textFieldPassword = ""
+    @State private var email = ""
+    @State private var password = ""
+    
+    let pinkColor = Color(red: 230/255, green: 0/255, blue: 126/255)
+    let backgroundColor = Color(red: 17/255, green: 21/255, blue: 30/255)
     
     var body: some View {
         ZStack {
-            Color.gray.ignoresSafeArea()
-            VStack {
+            backgroundColor.ignoresSafeArea()
+            VStack(spacing: 20) {
                 Text("Login")
-                    .font(.system(size: 55))
+                    .font(.system(size: 55, weight: .bold))
+                    .foregroundColor(.white)
                     .padding(.top, 10)
-                HStack {
-                    Text("E-mail")
-                        .padding(.bottom, -5)
-                        .padding(.top, 70)
-                    Spacer()
-                }
-                RoundedRectangle(cornerRadius: 8)
-                    .frame( height: 40)
+                
+                TextField("E-mail", text: $email)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .foregroundColor(.white)
-                    .overlay {
-                        TextField(" Type your e-mail:", text: $textField)
-                    }
-                HStack {
-                    Text("Password")
-                        .padding(.bottom, -5)
-                    Spacer()
-                }
-                .padding(.top, 20)
-                RoundedRectangle(cornerRadius: 8)
-                    .frame( height: 40)
+                    .padding(.top, 70)
+                
+                SecureField("Password", text: $password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .foregroundColor(.white)
-                    .overlay {
-                        TextField(" Type your Password:", text: $textField)
-                    }
-                ZStack {
-                    RoundedRectangle(cornerRadius: 8)
+                    .padding(.bottom, 100)
+                Spacer()
+                Button(action: {
+                    // Coloque a lógica de login aqui
+                }) {
+                    Text("Log in")
+                        .foregroundColor(.white)
+                        .font(.system(size: 17, weight: .bold))
                         .frame(width: 130, height: 40)
-                    Button("Log in") {
-                    }.foregroundColor(.white).font(.system(size: 17, weight: .bold))
+                        .background(pinkColor)
+                        .cornerRadius(8)
                 }
-                .padding(.top, 20)
-                .padding(.bottom, 250)
-                RoundedRectangle(cornerRadius: 8)
-                    .frame(width: 130, height: 40)
-                    .overlay {
-                        Button("Exib") {
-                        }
-                        .foregroundColor(.red).font(.system(size: 17, weight: .bold))
-                    }
+//                Spacer()
+                Button(action: {
+                    // Coloque a lógica para "Exib" aqui
+                }) {
+                    Text("Exib")
+                        .foregroundColor(.white)
+                        .font(.system(size: 17, weight: .bold))
+                        .frame(width: 130, height: 40)
+                }
+                
                 Spacer()
             }
-            .padding(.horizontal, 10)
+            .padding(.horizontal, 20)
         }
     }
 }
@@ -69,3 +65,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
