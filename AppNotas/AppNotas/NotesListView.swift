@@ -7,13 +7,20 @@
 
 import SwiftUI
 
+
+@available(iOS 17.0, *)
 struct NotesListView: View {
     @State private var notes: [Note] = []
     @State private var newNoteTitle = ""
     @State private var newNoteContent = ""
     
+    
     var body: some View {
         List {
+            Image(systemName: "pencil")
+                .symbolRenderingMode(.multicolor)
+                .symbolEffect(.variableColor.iterative)
+            
             ForEach(notes) { note in
                 NavigationLink(destination: NoteDetailView(note: note, onDelete: { self.delete(note: note) })) {
                     Text(note.title)
@@ -50,6 +57,10 @@ struct NotesListView: View {
 
 struct NotesListView_Previews: PreviewProvider {
     static var previews: some View {
-        NotesListView()
+        if #available(iOS 17.0, *) {
+            NotesListView()
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }
