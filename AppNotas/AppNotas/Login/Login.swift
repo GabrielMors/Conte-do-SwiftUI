@@ -10,9 +10,8 @@ import SwiftUI
 struct Login: View {
     @State private var email = ""
     @State private var password = ""
-    
-//    let pinkColor = Color(red: 230/255, green: 0/255, blue: 126/255)
-//    let backgroundColor = Color(red: 17/255, green: 21/255, blue: 30/255)
+    @State private var isRegisterActive = false
+    @State private var isLoginActive = false
     
     var body: some View {
         ZStack {
@@ -26,7 +25,7 @@ struct Login: View {
                 TextField("E-mail", text: $email)
                     .textFieldStyle(PlainTextFieldStyle())
                     .foregroundColor(.white)
-                    .accentColor(.white) // Cursor do texto
+                    .accentColor(.white)
                     .frame(height: 40)
                     .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 0))
                     .overlay(
@@ -50,8 +49,9 @@ struct Login: View {
                 
                 Spacer()
                 Button(action: {
-                    
+                    isLoginActive = true
                 }) {
+                    
                     Text("Login")
                         .foregroundColor(.white)
                         .font(.system(size: 17, weight: .bold))
@@ -59,16 +59,24 @@ struct Login: View {
                         .background(CustomColor.pinkColor)
                         .cornerRadius(8)
                 }
+                NavigationLink("", destination: NotesListView(), isActive: $isLoginActive)
+                              .opacity(0)
+                              .frame(width: 0, height: 0)
                 Spacer()
+                
                 Button(action: {
-                    
+                    isRegisterActive = true
                 }) {
+                    
                     Text("Don't have an account? Register")
                         .foregroundColor(.white)
                         .font(.system(size: 17, weight: .bold))
                         .frame(height: 40)
                 }
-                
+                NavigationLink("", destination: Register(), isActive: $isRegisterActive)
+                              .opacity(0)
+                              .frame(width: 0, height: 0)
+                      
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 50)
