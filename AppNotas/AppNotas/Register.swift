@@ -18,7 +18,7 @@ struct Register: View {
     
     var body: some View {
         ZStack {
-            backgroundColor.ignoresSafeArea()
+            CustomColor.backgroundColor.ignoresSafeArea()
             VStack(spacing: 20) {
                 Text("Register")
                     .font(.system(size: 55, weight: .bold))
@@ -33,7 +33,7 @@ struct Register: View {
                     .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 0))
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(pinkColor, lineWidth: 2)
+                            .stroke(CustomColor.pinkColor, lineWidth: 2)
                     )
                     .padding(.top, 70)
                     .padding(.bottom, 20)
@@ -46,7 +46,7 @@ struct Register: View {
                     .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 0))
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(pinkColor, lineWidth: 2)
+                            .stroke(CustomColor.pinkColor, lineWidth: 2)
                     )
                     .padding(.bottom, 20)
                 
@@ -58,7 +58,7 @@ struct Register: View {
                     .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 0))
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(pinkColor, lineWidth: 2)
+                            .stroke(CustomColor.pinkColor, lineWidth: 2)
                     )
                     .padding(.bottom, 20)
                 
@@ -70,7 +70,7 @@ struct Register: View {
                     .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 0))
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(pinkColor, lineWidth: 2)
+                            .stroke(CustomColor.pinkColor, lineWidth: 2)
                     )
                     
                 Spacer()

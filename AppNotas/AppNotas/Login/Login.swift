@@ -11,12 +11,12 @@ struct Login: View {
     @State private var email = ""
     @State private var password = ""
     
-    let pinkColor = Color(red: 230/255, green: 0/255, blue: 126/255)
-    let backgroundColor = Color(red: 17/255, green: 21/255, blue: 30/255)
+//    let pinkColor = Color(red: 230/255, green: 0/255, blue: 126/255)
+//    let backgroundColor = Color(red: 17/255, green: 21/255, blue: 30/255)
     
     var body: some View {
         ZStack {
-            backgroundColor.ignoresSafeArea()
+            CustomColor.backgroundColor.ignoresSafeArea()
             VStack(spacing: 20) {
                 Text("Login")
                     .font(.system(size: 55, weight: .bold))
@@ -31,7 +31,7 @@ struct Login: View {
                     .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 0))
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(pinkColor, lineWidth: 2)
+                            .stroke(CustomColor.pinkColor, lineWidth: 2)
                     )
                     .padding(.top, 70)
                     .padding(.bottom, 20)
@@ -44,7 +44,7 @@ struct Login: View {
                     .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 0))
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(pinkColor, lineWidth: 2)
+                            .stroke(CustomColor.pinkColor, lineWidth: 2)
                     )
                     .padding(.bottom, 100)
                 
@@ -56,7 +56,7 @@ struct Login: View {
                         .foregroundColor(.white)
                         .font(.system(size: 17, weight: .bold))
                         .frame(width: 130, height: 40)
-                        .background(pinkColor)
+                        .background(CustomColor.pinkColor)
                         .cornerRadius(8)
                 }
                 Spacer()
