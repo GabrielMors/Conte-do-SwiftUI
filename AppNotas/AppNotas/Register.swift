@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct Register: View {
     @State private var name = ""
     @State private var email = ""
     @State private var password = ""
+    @State private var confirmPassword = ""
 
     
     let pinkColor = Color(red: 230/255, green: 0/255, blue: 126/255)
@@ -75,7 +77,7 @@ struct Register: View {
                     
                 Spacer()
                 Button(action: {
-                    
+                    registerUser()
                 }) {
                     Text("Register")
                         .foregroundColor(.white)
@@ -97,6 +99,21 @@ struct Register: View {
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 50)
+        }
+    }
+    
+    
+    func registerUser() {
+        if password == confirmPassword {
+            Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+                if error != nil {
+                    print("error >>> \(error!.localizedDescription)")
+                } else {
+                   print("Deu bom")
+                }
+            }
+        } else {
+           print("Senhas imcompatíveis")
         }
     }
 }

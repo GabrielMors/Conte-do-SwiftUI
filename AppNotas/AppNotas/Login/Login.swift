@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct Login: View {
     @State private var email = ""
@@ -50,7 +51,7 @@ struct Login: View {
                 
                 Spacer()
                 Button(action: {
-                    
+                    signIn()
                 }) {
                     Text("Login")
                         .foregroundColor(.white)
@@ -72,6 +73,16 @@ struct Login: View {
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 50)
+        }
+    }
+    
+    func signIn() {
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if error != nil {
+                print("error >>> \(error!.localizedDescription)")
+            } else {
+               print("Deu bom")
+            }
         }
     }
 }
