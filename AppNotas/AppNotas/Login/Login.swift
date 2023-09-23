@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginScreen: View {
+struct Login: View {
     @State private var email = ""
     @State private var password = ""
     
@@ -25,7 +25,7 @@ struct LoginScreen: View {
                 
                 TextField("E-mail", text: $email)
                     .textFieldStyle(PlainTextFieldStyle())
-                    .foregroundColor(.white) // Texto
+                    .foregroundColor(.white)
                     .accentColor(.white) // Cursor do texto
                     .frame(height: 40)
                     .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 0))
@@ -78,7 +78,7 @@ struct LoginScreen: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginScreen()
+        Login()
     }
 }
 

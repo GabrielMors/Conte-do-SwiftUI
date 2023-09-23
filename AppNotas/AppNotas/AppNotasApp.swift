@@ -11,7 +11,7 @@ import SwiftUI
 struct AppNotasApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginScreen()
+            Login()
         }
     }
 }
