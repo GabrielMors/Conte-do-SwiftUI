@@ -15,7 +15,7 @@ struct AppNotasApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Login()
+            ContentView()
         }
     }
 }

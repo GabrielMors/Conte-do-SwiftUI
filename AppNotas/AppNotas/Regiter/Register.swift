@@ -64,7 +64,7 @@ struct Register: View {
                     )
                     .padding(.bottom, 20)
                 
-                SecureField("Confirm password", text: $password)
+                SecureField("Confirm password", text: $confirmPassword)
                     .textFieldStyle(PlainTextFieldStyle())
                     .foregroundColor(.white)
                     .accentColor(.white)
@@ -86,16 +86,6 @@ struct Register: View {
                         .background(pinkColor)
                         .cornerRadius(8)
                 }
-                Spacer()
-                Button(action: {
-                    
-                }) {
-                    Text("I already have an account")
-                        .foregroundColor(.white)
-                        .font(.system(size: 17, weight: .bold))
-                        .frame(height: 40)
-                }
-                
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 50)
@@ -122,7 +112,15 @@ struct Register: View {
 
 struct Register_Previews: PreviewProvider {
     static var previews: some View {
-        Register()
+        Group {
+            Register()
+                .previewDevice(PreviewDevice(rawValue: "iPhone 15 Pro"))
+                .previewDisplayName("Iphone 15")
+            
+            Register()
+                .previewDevice(PreviewDevice(rawValue: "iPhone SE 3rd generation"))
+                .previewDisplayName("Iphone SE")
+        }
     }
 }
 

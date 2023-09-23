@@ -37,6 +37,10 @@
 		C4193BEA2ABF539B000D1E3F /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4193BE92ABF539B000D1E3F /* Register.swift */; };
 		C4193BED2ABF56D2000D1E3F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4193BEC2ABF56D2000D1E3F /* Color.swift */; };
 		C4193BF92ABF60DA000D1E3F /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4193BF82ABF60DA000D1E3F /* Note.swift */; };
+		C4193BFC2ABF623F000D1E3F /* NotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4193BFB2ABF623F000D1E3F /* NotesListView.swift */; };
+		C4193BFE2ABF627F000D1E3F /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4193BFD2ABF627F000D1E3F /* NoteDetailView.swift */; };
+		C4193C002ABF62BC000D1E3F /* AddNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4193BFF2ABF62BB000D1E3F /* AddNotesView.swift */; };
+		C4193C022ABF6629000D1E3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4193C012ABF6629000D1E3F /* ContentView.swift */; };
 		C44DBC8C2ABBD83D00554EB0 /* AppNotasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44DBC8B2ABBD83D00554EB0 /* AppNotasApp.swift */; };
 		C44DBC8E2ABBD83D00554EB0 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44DBC8D2ABBD83D00554EB0 /* Login.swift */; };
 		C44DBC902ABBD83F00554EB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44DBC8F2ABBD83F00554EB0 /* Assets.xcassets */; };
@@ -48,6 +52,10 @@
 		C4193BE92ABF539B000D1E3F /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		C4193BEC2ABF56D2000D1E3F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		C4193BF82ABF60DA000D1E3F /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		C4193BFB2ABF623F000D1E3F /* NotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListView.swift; sourceTree = "<group>"; };
+		C4193BFD2ABF627F000D1E3F /* NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
+		C4193BFF2ABF62BB000D1E3F /* AddNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesView.swift; sourceTree = "<group>"; };
+		C4193C012ABF6629000D1E3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C44DBC882ABBD83D00554EB0 /* AppNotas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppNotas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44DBC8B2ABBD83D00554EB0 /* AppNotasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNotasApp.swift; sourceTree = "<group>"; };
 		C44DBC8D2ABBD83D00554EB0 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -116,6 +124,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C4193BFA2ABF61EC000D1E3F /* Regiter */ = {
+			isa = PBXGroup;
+			children = (
+				C4193BE92ABF539B000D1E3F /* Register.swift */,
+			);
+			path = Regiter;
+			sourceTree = "<group>";
+		};
 		C44DBC7F2ABBD83D00554EB0 = {
 			isa = PBXGroup;
 			children = (
@@ -138,11 +154,15 @@
 				C4193BF72ABF60C7000D1E3F /* Model */,
 				C4193BEB2ABF5684000D1E3F /* Utils */,
 				C4193BE22ABDE281000D1E3F /* Login */,
-				C4193BE92ABF539B000D1E3F /* Register.swift */,
+				C4193BFA2ABF61EC000D1E3F /* Regiter */,
 				C44DBC8B2ABBD83D00554EB0 /* AppNotasApp.swift */,
+				C4193C012ABF6629000D1E3F /* ContentView.swift */,
 				C44DBC8F2ABBD83F00554EB0 /* Assets.xcassets */,
 				037ABFBD2ABF749600EFD475 /* GoogleService-Info.plist */,
 				C44DBC912ABBD83F00554EB0 /* Preview Content */,
+				C4193BFB2ABF623F000D1E3F /* NotesListView.swift */,
+				C4193BFD2ABF627F000D1E3F /* NoteDetailView.swift */,
+				C4193BFF2ABF62BB000D1E3F /* AddNotesView.swift */,
 			);
 			path = AppNotas;
 			sourceTree = "<group>";
@@ -259,9 +279,13 @@
 			files = (
 				C4193BF92ABF60DA000D1E3F /* Note.swift in Sources */,
 				C4193BEA2ABF539B000D1E3F /* Register.swift in Sources */,
+				C4193C002ABF62BC000D1E3F /* AddNotesView.swift in Sources */,
 				C4193BED2ABF56D2000D1E3F /* Color.swift in Sources */,
 				C44DBC8E2ABBD83D00554EB0 /* Login.swift in Sources */,
+				C4193C022ABF6629000D1E3F /* ContentView.swift in Sources */,
+				C4193BFC2ABF623F000D1E3F /* NotesListView.swift in Sources */,
 				C44DBC8C2ABBD83D00554EB0 /* AppNotasApp.swift in Sources */,
+				C4193BFE2ABF627F000D1E3F /* NoteDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
