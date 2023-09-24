@@ -72,10 +72,6 @@ struct NotesListView: View {
 
 struct NotesListView_Previews: PreviewProvider {
     static var previews: some View {
-        if #available(iOS 17.0, *) {
-            NotesListView()
-        } else {
-            // Fallback on earlier versions
-        }
+        NotesListView()
     }
 }

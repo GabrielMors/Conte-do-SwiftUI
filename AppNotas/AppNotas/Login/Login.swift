@@ -50,6 +50,7 @@ struct Login: View {
                     
                     Button(action: {
                         isLoginActive.toggle()
+//                        loginUser()
                     }) {
                         Text("Login")
                             .foregroundStyle(.white)
@@ -62,7 +63,7 @@ struct Login: View {
                     Spacer()
                     
                     Button(action: {
-                        loginUser()
+                        isRegisterActive.toggle()
                     }) {
                         Text("Don't have an account? Register")
                             .foregroundStyle(.white)
