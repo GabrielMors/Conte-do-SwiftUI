@@ -108,6 +108,16 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		34402CC02AC0A41A0023EAA8 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				C4193BFB2ABF623F000D1E3F /* NotesListView.swift */,
+				C4193BFD2ABF627F000D1E3F /* NoteDetailView.swift */,
+				C4193BFF2ABF62BB000D1E3F /* AddNotesView.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
 		C4193BE22ABDE281000D1E3F /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +169,7 @@
 		C44DBC8A2ABBD83D00554EB0 /* AppNotas */ = {
 			isa = PBXGroup;
 			children = (
+				34402CC02AC0A41A0023EAA8 /* Notes */,
 				C4193BF72ABF60C7000D1E3F /* Model */,
 				C4193BEB2ABF5684000D1E3F /* Utils */,
 				C4193BE22ABDE281000D1E3F /* Login */,
@@ -168,9 +179,6 @@
 				C44DBC8F2ABBD83F00554EB0 /* Assets.xcassets */,
 				037ABFBD2ABF749600EFD475 /* GoogleService-Info.plist */,
 				C44DBC912ABBD83F00554EB0 /* Preview Content */,
-				C4193BFB2ABF623F000D1E3F /* NotesListView.swift */,
-				C4193BFD2ABF627F000D1E3F /* NoteDetailView.swift */,
-				C4193BFF2ABF62BB000D1E3F /* AddNotesView.swift */,
 			);
 			path = AppNotas;
 			sourceTree = "<group>";
