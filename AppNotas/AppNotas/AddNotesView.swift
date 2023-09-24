@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct AddNoteView: View {
+    
+    @Binding var isPresented: Bool
     @State private var newNoteTitle = ""
     @State private var newNoteContent = ""
     
-    let onSave: () -> Void
+    let onSave: (String, String) -> Void
     
     var body: some View {
         Form {
@@ -24,7 +26,10 @@ struct AddNoteView: View {
             }
             
             Section {
-                Button(action: onSave) {
+                Button(action: {
+                    onSave(newNoteTitle, newNoteContent)
+                    isPresented = false // Feche a tela após salvar
+                }) {
                     Text("Salvar")
                 }
             }
@@ -33,8 +38,13 @@ struct AddNoteView: View {
     }
 }
 
+
 struct AddNoteView_Previews: PreviewProvider {
+    @State static var isPresented = false
     static var previews: some View {
-        AddNoteView(onSave: {})
+        AddNoteView(isPresented: $isPresented) { title, content in
+            // Esta é uma implementação de onSave para a pré-visualização
+        }
     }
 }
+
