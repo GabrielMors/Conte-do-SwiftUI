@@ -6,17 +6,21 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct Login: View {
+    
     @State private var email = ""
     @State private var password = ""
     @State private var isRegisterActive = false
     @State private var isLoginActive = false
+    @State private var isPresentedAlert: Bool = false
+    @State private var errorMessage: String = ""
     
     var body: some View {
         NavigationStack {
             ZStack {
-                CustomColor.backgroundColor.ignoresSafeArea()
+                Color.backgroundColor.ignoresSafeArea()
                 VStack(spacing: 25) {
                     
                     Text("Login")
@@ -27,48 +31,52 @@ struct Login: View {
                     Spacer()
                     
                     Group {
-                        TextField("", text: $email, prompt: Text("E-mail").foregroundColor(.gray))
+                        TextField("", text: $email, prompt: Text("E-mail").foregroundStyle(.white))
                             .keyboardType(.emailAddress)
-                        SecureField("", text: $password, prompt: Text("Password").foregroundColor(.gray))
+                        SecureField("", text: $password, prompt: Text("Password").foregroundStyle(.white))
                     }
                     .frame(height: 40)
                     .padding(7)
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(CustomColor.pinkColor, lineWidth: 2)
+                            .stroke(Color.pinkColor, lineWidth: 2)
                     )
                     .padding(7)
-                    .foregroundColor(.white)
-                    .accentColor(.white)
+                    .foregroundStyle(.white)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                     
                     Spacer()
                     
                     Button(action: {
-                        isLoginActive = true
+                        isLoginActive.toggle()
                     }) {
                         Text("Login")
-                            .foregroundColor(.white)
+                            .foregroundStyle(.white)
                             .font(.system(size: 17, weight: .bold))
                             .frame(width: 180, height: 45)
-                            .background(CustomColor.pinkColor)
+                            .background(Color.pinkColor)
                             .clipShape(RoundedRectangle(cornerRadius: 8))
                     }
                     
                     Spacer()
                     
                     Button(action: {
-                        isRegisterActive.toggle()
+                        loginUser()
                     }) {
                         Text("Don't have an account? Register")
-                            .foregroundColor(.white)
+                            .foregroundStyle(.white)
                             .font(.system(size: 17, weight: .bold))
                             .frame(height: 40)
                     }
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 50)
+            }
+            .alert("Attention!", isPresented: $isPresentedAlert) {
+                Button("OK", role: .cancel) { }
+            } message: {
+                Text(errorMessage)
             }
             .navigationDestination(isPresented: $isRegisterActive) {
                 Register()
@@ -78,6 +86,19 @@ struct Login: View {
             }
         }
     }
+    
+    
+    func loginUser() {
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error {
+                errorMessage = "Error: \(error.localizedDescription)"
+                isPresentedAlert.toggle()
+            } else {
+                isLoginActive.toggle()
+            }
+        }
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

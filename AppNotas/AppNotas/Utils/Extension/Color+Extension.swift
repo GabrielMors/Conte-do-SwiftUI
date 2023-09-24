@@ -8,8 +8,7 @@
 import Foundation
 import SwiftUI
 
-class CustomColor {
-    
+extension Color {
     /// Cor rosa do aplicativo.
     ///  - Hexadecimal: #e6007e
     ///  - RGB: red: 230/255, green: 0/255, blue: 126/255
