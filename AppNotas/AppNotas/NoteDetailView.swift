@@ -8,26 +8,34 @@
 import SwiftUI
 
 struct NoteDetailView: View {
-    let note: Note
-    let onDelete: () -> Void
+    @Binding var note: Note
     
     var body: some View {
         VStack {
-            Text(note.title)
+            TextField("Título", text: $note.title)
                 .font(.title)
-            Text(note.content)
+            TextEditor(text: $note.content)
                 .padding()
-            Spacer()
         }
         .navigationBarTitle("Detalhes")
-        .navigationBarItems(trailing: Button(action: onDelete) {
-            Text("Excluir")
+        .navigationBarItems(trailing: Button(action: {
+            
+        }) {
+            Text("Salvar")
         })
     }
 }
 
+
+
+
 struct NoteDetailView_Previews: PreviewProvider {
+    @State static var note = Note(title: "Exemplo de Título", content: "Conteúdo de Exemplo")
+    
     static var previews: some View {
-        NoteDetailView(note: Note(title: "Example title", content: "Example Content"), onDelete: {})
+        NavigationView {
+            NoteDetailView(note: $note)
+        }
     }
 }
+

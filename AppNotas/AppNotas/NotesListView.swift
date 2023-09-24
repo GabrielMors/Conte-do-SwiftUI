@@ -9,21 +9,43 @@ import SwiftUI
 
 struct NotesListView: View {
     @State private var notes: [Note] = []
+    @State private var isAddingNote = false
     @State private var newNoteTitle = ""
     @State private var newNoteContent = ""
     
     var body: some View {
         List {
-            ForEach(notes) { note in
-                NavigationLink(destination: NoteDetailView(note: note, onDelete: { self.delete(note: note) })) {
-                    Text(note.title)
+            ForEach($notes) { $note in
+                NavigationLink(destination: NoteDetailView(note: $note)) {
+                    HStack {
+                        Image(systemName: "pencil")
+                            .symbolRenderingMode(.multicolor)
+                            .symbolEffect(.variableColor.iterative)
+                            .frame(width: 24, height: 24)
+                            .padding(.trailing, 8)
+                        VStack(alignment: .leading) {
+                            Text(note.title)
+                                .font(.headline)
+                            Text(note.content)
+                                .font(.subheadline)
+                        }
+                    }
                 }
             }
             .onDelete(perform: deleteNotes)
         }
-        .navigationTitle("Notas")
-        .navigationBarItems(trailing: NavigationLink(destination: AddNoteView(onSave: addNote)) {
+        .navigationBarTitle("Notas")
+        .navigationBarItems(trailing: Button(action: {
+            isAddingNote = true
+        }) {
             Text("Adicionar")
+        })
+        .sheet(isPresented: $isAddingNote, content: {
+            AddNoteView(isPresented: $isAddingNote) { title, content in
+                // Função de salvamento
+                let newNote = Note(title: title, content: content)
+                notes.append(newNote)
+            }
         })
     }
     
@@ -50,6 +72,10 @@ struct NotesListView: View {
 
 struct NotesListView_Previews: PreviewProvider {
     static var previews: some View {
-        NotesListView()
+        if #available(iOS 17.0, *) {
+            NotesListView()
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }
