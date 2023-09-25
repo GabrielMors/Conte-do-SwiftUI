@@ -30,7 +30,6 @@ struct AddNoteView: View {
             Section {
                 Button(action: {
                     viewModel.notes.append(note)
-                    viewModel.saveNotes()
                     dismiss()
                 }) {
                     Text("Salvar")

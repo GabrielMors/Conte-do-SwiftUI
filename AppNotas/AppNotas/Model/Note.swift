@@ -8,7 +8,12 @@
 import Foundation
 
 class NoteViewModel: ObservableObject {
-    @Published var notes: [Note] = []
+    
+    @Published var notes: [Note] = [] {
+          didSet {
+              saveNotes()
+          }
+      }
 
     // Carregar as notas do UserDefaults durante a inicialização
     init() {
@@ -20,7 +25,7 @@ class NoteViewModel: ObservableObject {
     }
 
     // salvar as notas no UserDefaults
-    func saveNotes() {
+    private func saveNotes() {
         if let encoded = try? JSONEncoder().encode(notes) {
             UserDefaults.standard.set(encoded, forKey: "notes")
         }

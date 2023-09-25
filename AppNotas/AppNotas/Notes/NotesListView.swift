@@ -36,14 +36,11 @@ struct NotesListView: View {
             }
             .onDelete { indexSet in
                 viewModel.notes.remove(atOffsets: indexSet)
-                viewModel.saveNotes()
             }
             .onMove { sourceIndices, destinationIndex in
                 viewModel.notes.move(fromOffsets: sourceIndices, toOffset: destinationIndex)
-                viewModel.saveNotes()
             }
         }
-        
         .navigationBarTitle("Notas")
         .navigationBarItems(trailing: Button(action: {
             isAddingNote.toggle()

@@ -31,7 +31,8 @@ struct NoteDetailView: View {
             dismiss()
         }) {
             Text("Salvar")
-        }.disabled(isDifferent))
+        }
+            .disabled(isDifferent))
     }
     
     private var isDifferent: Bool {
